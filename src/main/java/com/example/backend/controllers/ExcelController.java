@@ -29,7 +29,6 @@ public class ExcelController {
                 logger.info(message);
                 return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
             } catch (Exception e) {
-                e.printStackTrace();
                 message = "Could not upload the file: " + file.getOriginalFilename() + "!";
                 logger.error(message);
                 return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
