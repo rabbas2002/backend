@@ -1,2 +1,9 @@
-package com.example.backend;public class ResponseMessage {
+package com.example.backend;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+@Data
+@AllArgsConstructor
+public class ResponseMessage {
+    private String message;
 }
