@@ -33,7 +33,6 @@ public class SupplierService {
         else{
             logger.info("Getting suppliers using supplier Id......");
             if(isUnexpired){
-                System.out.println(productName);
                 return productRepository.getUnexpiredProducts(id,productName,PageRequest.of(pageNo, pageSize));
             }
             return productRepository.getBySupplierId(id,productName,PageRequest.of(pageNo,pageSize));
