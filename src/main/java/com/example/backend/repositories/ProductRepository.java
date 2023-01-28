@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository extends JpaRepository<Product,Long> {
 
     @Query("SELECT p FROM Product p WHERE p.supplier.id=?1 AND p.stock>0 AND p.name LIKE %?2% ")
-    public Page<Product> getBySupplierId(Long supplierId,String productName, PageRequest of);
+     Page<Product> getBySupplierId(Long supplierId,String productName, PageRequest of);
 
     @Query("SELECT p FROM Product p WHERE p.supplier.id=?1 AND p.stock>0 AND p.name LIKE %?2% AND p.exp>CURRENT_DATE ")
-    public Page<Product>getUnexpiredProducts(Long supplierId,String productName,PageRequest of);
+    Page<Product>getUnexpiredProducts(Long supplierId,String productName,PageRequest of);
 }
 
